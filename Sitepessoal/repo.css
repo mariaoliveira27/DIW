@@ -1,0 +1,60 @@
+/*************
+* NAVIGATION *
+**************/
+nav {
+    background-color: #a2a0cd;
+  }
+  
+  .navbar {
+    list-style: none;
+    display: flex;
+    flex-flow: column wrap;
+  }
+  
+  .navbar li {
+    padding: 12px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar  a {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  
+  .navbar a:hover {
+    color: rgb(165, 206, 206);
+  }
+  
+  
+  @media (min-width: 768px) {
+    .navbar {
+      flex-flow: row wrap;
+      justify-content: end;
+    }
+    
+    .navbar li {
+      border-right: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+}
+.container{
+  text-align: left;
+  font:  bold 30px arial, sans-serif;
+}
+.botao{
+  border: solid 1px blue;
+  border-radius: 20px;
+  color: blue;
+  background-color: white;
+  transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+  h6{
+  text-align: center;
+  font-size: medium;
+}
+}
+.botao:hover{
+  background-color: blue;
+  color: white;
+  transform: scale(1.2)
+}
