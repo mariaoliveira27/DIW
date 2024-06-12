@@ -1,0 +1,70 @@
+{
+    "albuns": [
+      {
+        "id": 1,
+        "title": "Álbum 1",
+        "description": "Descrição do Álbum 1",
+        "coverUrl": "http://example.com/capa1.jpg",
+        "contentUrl": "http://example.com/conteudo1"
+      },
+      {
+        "id": 2,
+        "title": "Álbum 2",
+        "description": "Descrição do Álbum 2",
+        "coverUrl": "http://example.com/capa2.jpg",
+        "contentUrl": "http://example.com/conteudo2"
+      }
+    ],
+    "fotos": [
+      {
+        "id": 1,
+        "albumId": 1,
+        "url": "http://example.com/foto1.jpg",
+        "description": "Foto 1 do Álbum 1"
+      },
+      {
+        "id": 2,
+        "albumId": 1,
+        "url": "http://example.com/foto2.jpg",
+        "description": "Foto 2 do Álbum 1"
+      }
+    ],
+    "destaques": [
+      {
+        "id": 1,
+        "title": "Destaque 1",
+        "description": "Descrição do Destaque 1",
+        "coverUrl": "http://example.com/destaque1.jpg",
+        "contentUrl": "http://example.com/conteudo1"
+      }
+    ],
+    "colegas": [
+      {
+        "id": 1,
+        "photoUrl": "http://example.com/colega1.jpg",
+        "name": "Colega 1",
+        "githubUrl": "http://github.com/colega1"
+      },
+      {
+        "id": 2,
+        "photoUrl": "http://example.com/colega2.jpg",
+        "name": "Colega 2",
+        "githubUrl": "http://github.com/colega2"
+      }
+    ],
+    "repositorios": [
+      {
+        "id": 1,
+        "name": "Repositorio 1",
+        "description": "Descrição do Repositório 1",
+        "url": "http://github.com/repo1"
+      },
+      {
+        "id": 2,
+        "name": "Repositorio 2",
+        "description": "Descrição do Repositório 2",
+        "url": "http://github.com/repo2"
+      }
+    ]
+  }
+  

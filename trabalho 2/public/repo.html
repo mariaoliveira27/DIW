@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Repositório</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Detalhes do Repositório</h1>
+    </header>
+    <main class="container mt-5">
+        <div id="repo-details"></div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>Site desenvolvido por Nome do Aluno</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        async function fetchRepoDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const repoId = params.get('id');
+            const repoResponse = await fetch(`https://api.github.com/repositories/${repoId}`);
+            const repoData = await repoResponse.json();
+            document.getElementById('repo-details').innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">${repoData.name}</h5>
+                        <p class="card-text">${repoData.description}</p>
+                        <p><strong>Linguagem:</strong> ${repoData.language}</p>
+                        <p><strong>Estrelas:</strong> ${repoData.stargazers_count}</p>
+                        <p><strong>Forks:</strong> ${repoData.forks_count}</p>
+                        <p><strong>Licença:</strong> ${repoData.license?.name || 'N/A'}</p>
+                        <a href="${repoData.html_url}" class="btn btn-primary">Ver no GitHub</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchRepoDetails);
+    </script>
+</body>
+</html>
