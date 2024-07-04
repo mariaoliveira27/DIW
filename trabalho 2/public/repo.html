@@ -7,23 +7,35 @@
 </head>
 <body>
     <header class="bg-primary text-white text-center py-3">
-        <h1>Maria Clara</h1>
+        <h1>Detalhes do Repositório</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Perfil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#repositorios">Repositórios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#conteudo">Conteúdo</a></li>
+                <li class="nav-item"><a class="nav-link" href="#colegas">Colegas</a></li>
+            </ul>
+        </nav>
     </header>
     <main class="container mt-5">
         <div id="repo-details"></div>
     </main>
     <footer class="bg-dark text-white text-center py-3">
-        <p>Site desenvolvido por Nome do Aluno</p>
+        <p>Site desenvolvido por Maria Clara</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../assets/script/app.js"></script>
     <script>
         async function fetchRepoDetails() {
             const params = new URLSearchParams(window.location.search);
             const repoId = params.get('id');
-            const repoResponse = await fetch(`https://api.github.com/repositories/${repoId}`);
+            
+            // Use the repoId if you want to make this dynamic
+            const repoResponse = await fetch(`https://api.github.com/repos/mariaoliveira27/DIW`);
             const repoData = await repoResponse.json();
+            
             document.getElementById('repo-details').innerHTML = `
                 <div class="card">
                     <div class="card-body">
@@ -32,8 +44,10 @@
                         <p><strong>Linguagem:</strong> ${repoData.language}</p>
                         <p><strong>Estrelas:</strong> ${repoData.stargazers_count}</p>
                         <p><strong>Forks:</strong> ${repoData.forks_count}</p>
+                        <p><strong>Data de criação:</strong> ${new Date(repoData.created_at).toLocaleDateString()}</p>
+                        <p><strong>Tópicos:</strong> ${repoData.topics.join(', ')}</p>
                         <p><strong>Licença:</strong> ${repoData.license?.name || 'N/A'}</p>
-                        <a href="${repoData.html_url}" class="btn btn-primary">Ver no GitHub</a>
+                        <a href="${repoData.html_url}" class="btn btn-primary">Repositório Diw</a>
                     </div>
                 </div>
             `;

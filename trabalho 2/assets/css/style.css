@@ -1,0 +1,15 @@
+card {
+    margin-bottom: 1rem;
+  }
+  #colegas-content{
+    align-items: center;
+  }
+  #botao{
+    background-color: rgb(209, 221, 37);
+    border: solid rgb(209, 221, 37);
+    border-radius: 10px;
+  }
+  #botao:hover{
+    background-color: rgb(92, 186, 55);
+    border: solid rgb(92, 186, 55) ;
+  }
